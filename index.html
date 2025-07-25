@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Convite Kairós</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .envelope {
+      width: 320px;
+      height: 220px;
+      position: relative;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .flap {
+      width: 100%;
+      height: 100%;
+      background: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: top;
+      transform: rotateX(0deg);
+      transition: transform 1.2s ease-in-out;
+      z-index: 2;
+    }
+
+    .flap.open {
+      transform: rotateX(-180deg);
+    }
+
+    .letter {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      right: 10%;
+      bottom: 10%;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+      z-index: 1;
+    }
+
+    .letter.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope" id="envelope">
+    <div class="flap" id="flap"></div>
+    <div class="letter" id="letter">
+      <h2>📬 Convite Especial</h2>
+      <p>
+        É com grande alegria que convidamos você para viver uma experiência única com Deus!
+      </p>
+      <p>
+        💒 <strong>KAIRÓS – Missão Jovens Sarados</strong><br>
+        📍 Cabreúva - Paróquia Maria de Nazaré, Rua Adélia Sem N°<br>
+        🗓️ Data: <em>[26/07]</em><br>
+        ⏰ Horário: <em>[19h30]</em>
+      </p>
+      <p>
+        Um dia de cura, louvor, adoração e amizade.<br>
+        Venha deixar Deus transformar sua vida!
+      </p>
+      <p><em>"Jovens, sede fortes, porque a Palavra de Deus permanece em vós." (1Jo 2,14)</em></p>
+      <p><strong>Esperamos por você!</strong></p>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('flap').classList.add('open');
+      document.getElementById('letter').classList.add('show');
+    }, 3000);
+  </script>
+
+</body>
+</html>
